@@ -1,0 +1,27 @@
+<h1>Listing all endings</h1>
+<table class="table table-striped">
+  <tr>
+    <th>What Beginning</th>
+    <th>Ending User</th>
+    <th>Created</th>
+    <th>Controls</th>
+  </tr>
+
+<% @endings.each do |ending| %>
+  <tr>
+    <td><%= ending.beginning.title %></td>
+    <td><%= ending.user.name %></td>
+    <td><%= time_ago_in_words(ending.created_at) %> ago</td>
+
+    <div class="btn-group">
+      <td><button class="btn"><%= link_to 'Show', ending %></button></td>
+      <td><button class="btn"><%= link_to 'Edit', edit_ending_path(ending) %></button></td>
+      <td><button class="btn"><%= link_to 'Destroy', ending, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+    </div>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+

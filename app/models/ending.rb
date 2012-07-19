@@ -1,4 +1,6 @@
 class Ending < ActiveRecord::Base
+  acts_as_commentable
+
   attr_accessible :beginning_id, :content, :title
 
   belongs_to :user

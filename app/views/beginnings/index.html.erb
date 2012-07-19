@@ -1,0 +1,28 @@
+<h1>Listing all beginnings</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Title</th>
+    <th>Original Author</th>
+    <th>Created</th>
+    <th>Controls</th>
+  </tr>
+
+<% @beginnings.each do |beginning| %>
+  <tr>
+    <td><%= beginning.title %></td>
+    <td><%= beginning.original_author %></td>
+    <td><%= time_ago_in_words(beginning.created_at) %> ago</td>
+    <div class="btn-group">
+      <td><button class="btn"><%= link_to 'Show', beginning %></button></td>
+      <td><button class="btn"><%= link_to 'Edit', edit_beginning_path(beginning) %></button></td>
+      <td><button class="btn"><%= link_to 'Destroy', beginning, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+    </div>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<button class="btn"><%= link_to 'New Beginning', new_beginning_path %></button>
+

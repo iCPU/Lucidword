@@ -1,0 +1,28 @@
+<div class="form-inputs">
+<%= simple_form_for(@ending) do |f| %>
+  <%= f.error_notification %>
+
+<p>
+  <b>Beginning Title:</b>
+  <%= @ending.beginning.title %>
+</p>
+<p>
+  <b>Beginning Content:</b>
+  <%= simple_format (@ending.beginning.content) %>
+</p>
+
+
+  <%= f.input :content, :label => false, :as => :text, :input_html => { :class => "span6" }  %>
+
+<p>
+  <b>Want a new title for your ending?</b>
+  <%= f.input :title, :label => false, :input_html => { :class => "span4" } %>
+</p>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+

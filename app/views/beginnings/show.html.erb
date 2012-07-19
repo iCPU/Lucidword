@@ -1,0 +1,40 @@
+<div class ="alert alert-success">
+<p>
+  <b>Title:</b>
+  <%= @beginning.title %>
+</p>
+
+<p>
+  <b>Original Author:</b>
+  <%= @beginning.original_author %>
+</p>
+
+<p> 
+  <b>Created by lucid user:</b>
+  <%= @beginning.user.name %> on  <%= @beginning.created_at %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= simple_format (@beginning.content) %>
+</p>
+</div>
+<div class="form-inputs">
+<%= simple_form_for(@ending) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :content, :placeholder => 'dont be shy, finish this piece...', :label => false, :as => :text, :input_html => { :class => "span6" }  %>
+  </div>
+<%= f.hidden_field :beginning_id, :value => @beginning.id %>
+<p>
+  <b>A title for your ending?</b>
+  <%= f.input :title, :label => false, :input_html => { :class => "span4" } %>
+</p>
+
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+

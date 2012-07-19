@@ -1,0 +1,27 @@
+<p>
+  <b>For Beginning:</b>
+  <%= @ending.beginning.title %>
+</p>
+<div class ="alert alert-success">
+
+<p>
+  <b>Beginning Content:</b>
+  <%= simple_format (@ending.beginning.content) %>
+</p>
+</div>
+<div class ="alert alert-info"
+<p>
+  <%= simple_format (@ending.content) %>
+</p>
+</div>
+<p>
+  <b>Ending Title:</b>
+  <%= @ending.title %>
+</p>
+<p> 
+  <b>Ending Created by lucid user:</b>
+  <%= @ending.user.name %> on  <%= @ending.created_at %>
+</p>
+<%= link_to 'Edit', edit_ending_path(@ending) %> |
+<%= link_to 'Back', endings_path %>
+
