@@ -12,4 +12,6 @@ class User < ActiveRecord::Base
 
   has_many :beginnings  
   has_many :endings
+  has_many :comments
+ 
 end

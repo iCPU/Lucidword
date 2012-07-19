@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120719191427) do
+ActiveRecord::Schema.define(:version => 20120719211924) do
 
   create_table "beginnings", :force => true do |t|
     t.string   "original_author"
@@ -25,21 +25,14 @@ ActiveRecord::Schema.define(:version => 20120719191427) do
   add_index "beginnings", ["user_id", "created_at"], :name => "index_beginnings_on_user_id_and_created_at"
 
   create_table "comments", :force => true do |t|
-    t.integer  "commentable_id",   :default => 0
-    t.string   "commentable_type", :default => ""
-    t.string   "title",            :default => ""
-    t.text     "body",             :default => ""
-    t.string   "subject",          :default => ""
-    t.integer  "user_id",          :default => 0,  :null => false
-    t.integer  "parent_id"
-    t.integer  "lft"
-    t.integer  "rgt"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
+    t.integer  "user_id"
+    t.integer  "ending_id"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
-  add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
-  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+  add_index "comments", ["user_id", "ending_id", "created_at"], :name => "index_comments_on_user_id_and_ending_id_and_created_at"
 
   create_table "endings", :force => true do |t|
     t.string   "title"
