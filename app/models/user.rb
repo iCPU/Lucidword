@@ -11,4 +11,5 @@ class User < ActiveRecord::Base
 
 
   has_many :beginnings  
+  has_many :endings
 end

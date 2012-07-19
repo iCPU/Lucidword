@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120719180029) do
+ActiveRecord::Schema.define(:version => 20120719183817) do
 
   create_table "beginnings", :force => true do |t|
     t.string   "original_author"
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(:version => 20120719180029) do
   end
 
   add_index "beginnings", ["user_id", "created_at"], :name => "index_beginnings_on_user_id_and_created_at"
+
+  create_table "endings", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "beginning_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "endings", ["user_id", "beginning_id", "created_at"], :name => "index_endings_on_user_id_and_beginning_id_and_created_at"
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
