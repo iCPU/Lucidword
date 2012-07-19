@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20120719214229) do
     t.string   "ancestry"
   end
 
+  add_index "comments", ["ancestry"], :name => "index_comments_on_ancestry"
   add_index "comments", ["user_id", "ending_id", "created_at"], :name => "index_comments_on_user_id_and_ending_id_and_created_at"
 
   create_table "endings", :force => true do |t|

@@ -1,8 +1,4 @@
-<p id="notice"><%= notice %></p>
 
-  <p>
-    <%= @comment.content %>
-  </p>
+<%= nested_comments @comment.subtree.arrange(:order => :created_at) %>
 
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
+<p><%= link_to "Back to All Messages", comments_path %></p>

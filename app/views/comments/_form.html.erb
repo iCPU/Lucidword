@@ -1,6 +1,6 @@
 <%= simple_form_for(@comment) do |f| %>
   <%= f.error_notification %>
-
+  <%= f.hidden_field :parent_id %>
   <div class="form-inputs">
     <p>
       <%= f.label :content, "New Message" %><br />

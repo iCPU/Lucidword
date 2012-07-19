@@ -1,5 +1,7 @@
 class Comment < ActiveRecord::Base
-  attr_accessible :content, :ending_id
+  attr_accessible :content, :ending_id, :parent_id
+
+  has_ancestry  
 
   belongs_to :ending
   belongs_to :user

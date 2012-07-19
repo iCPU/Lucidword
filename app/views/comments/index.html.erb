@@ -1,15 +1,3 @@
-
-
-<% for comment in @comments %>
-  <div class="comment">
-    <div class="created_at"><%= comment.created_at.strftime("%B %d, %Y") %></div>
-    <div class="content">
-      <%= comment.content %>
-    </div>
-    <div class="actions">
-      <%= link_to "Destroy", comment, :confirm => "Are you sure?", :method => :delete %>
-    </div>
-  </div>
-<% end %>
+<%= nested_comments @comments.arrange(:order => :created_at) %>
 
 <%= render "form" %>
