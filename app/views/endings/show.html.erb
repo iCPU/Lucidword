@@ -25,3 +25,8 @@
 <%= link_to 'Edit', edit_ending_path(@ending) %> |
 <%= link_to 'Back', endings_path %>
 
+
+<div id="comments">
+  <%= nested_comments @ending.comments.includes(:user).arrange(:order => "created_at asc") %>
+  <%= render "comments/form" %>
+</div>

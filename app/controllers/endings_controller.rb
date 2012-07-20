@@ -14,6 +14,7 @@ class EndingsController < ApplicationController
   # GET /endings/1.json
   def show
     @ending = Ending.find(params[:id])
+    @comment = Comment.new(:ending_id => params[:id], :user_id => current_user)
 
     respond_to do |format|
       format.html # show.html.erb
