@@ -36,6 +36,8 @@ class CommentsController < ApplicationController
   # GET /comments/1/edit
   def edit
     @comment = Comment.find(params[:id])
+    @comment.activity_owner = current_user
+
   end
 
   # POST /comments
@@ -43,6 +45,7 @@ class CommentsController < ApplicationController
   def create
     @user = current_user
     @comment = @user.comments.build(params[:comment])
+    @comment.activity_owner = current_user
 
     respond_to do |format|
       if @comment.save
@@ -59,6 +62,7 @@ class CommentsController < ApplicationController
   # PUT /comments/1.json
   def update
     @comment = Comment.find(params[:id])
+    @comment.activity_owner = current_user
 
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
@@ -75,6 +79,7 @@ class CommentsController < ApplicationController
   # DELETE /comments/1.json
   def destroy
     @comment = Comment.find(params[:id])
+    @comment.activity_owner = current_user
     @comment.destroy
 
     respond_to do |format|

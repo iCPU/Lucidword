@@ -1,4 +1,4 @@
-<%= link_to image_tag('Lucid1.png', :size => "80x25", :alt => "Lucid Word"), root_path, :class => 'brand' %>
+<%= link_to image_tag('Lucid1.png', :size => "80x20", :alt => "Lucid Word"), root_path, :class => 'brand' %>
 <ul class="nav">
   <% if user_signed_in? %>
   <% else %>
@@ -8,13 +8,13 @@
   <% end %>
   <% if user_signed_in? %>
     <li>
-    <%= link_to 'My Profile', user_path(current_user) %>
-    </li>
-    <li>
     <%= link_to 'Beginnings', beginnings_path %>
     </li>
     <li>
     <%= link_to 'Endings', endings_path %>
+    </li>
+    <li>
+    <%= link_to 'My Profile', user_path(current_user) %>
     </li>
     <li>
     <%= link_to 'Edit account', edit_user_registration_path %> 

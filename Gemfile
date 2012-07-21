@@ -6,6 +6,7 @@ gem 'sqlite3'
 gem 'rails_admin'
 gem 'ancestry'
 gem 'thumbs_up'
+gem 'public_activity'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

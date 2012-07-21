@@ -3,6 +3,7 @@ class Ending < ActiveRecord::Base
   attr_accessible :beginning_id, :content, :title
 
   acts_as_voteable
+  tracked 
 
   belongs_to :user
   belongs_to :beginning

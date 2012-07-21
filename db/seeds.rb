@@ -77,6 +77,99 @@ At the meeting of my"
 
 puts 'New beginning created: ' << beginning2.title
 
+beginning3 = user3.beginnings.create! :title => 'Daddy', :original_author => 'Sylvia Plath', :content => 'You do not do, you do not do
+Any more, black shoe
+In which I have lived like a foot
+For thirty years, poor and white,
+Barely daring to breathe or Achoo.'
+
+puts 'New beginning created: ' << beginning3.title
+
+beginning4 = user2.beginnings.create! :title => "Oh, The Places You'll Go", :original_author => 'Dr. Seuss', :content => "Congratulations! 
+Today is your day. 
+You're off to Great Places! 
+You're off and away!
+
+You have brains in your head. 
+You have feet in your shoes. 
+You can steer yourself 
+any direction you choose. 
+You're on your own. And you know what you know. 
+And YOU are the guy who'll decide where to go.
+
+You'll look up and down streets. Look 'em over with care. 
+About some you will say, I don't choose to go there. 
+With your head full of brains and your shoes full of feet, 
+you're too smart to go down any not-so-good street.
+
+And you may not find any 
+you'll want to go down. 
+In that case, of course, 
+you'll head straight out of town.
+
+It's opener there 
+in the wide open air.
+
+Out there things can happen 
+and frequently do 
+to people as brainy 
+and footsy as you.
+
+And when things start to happen, 
+don't worry. Don't stew. 
+Just go right along. 
+You'll start happening too.
+
+OH! 
+THE PLACES YOU'LL GO!"
+
+puts 'New beginning created: ' << beginning4.title
+
+beginning5 = user.beginnings.create! :title => 'Ode to autumn', :original_author => 'John Keats', :content => "Season of mists and mellow fruitfulness, 
+Close bosom-friend of the maturing sun; 
+Conspiring with him how to load and bless 
+With fruit the vines that round the thatch-eaves run; 
+To bend with apples the moss'd cottage-trees, 
+And fill all fruit with ripeness to the core; 
+To swell the gourd, and plump the hazel shells 
+With a sweet kernel; to set budding more, 
+And still more, later flowers for the bees, 
+Until they think warm days will never ...."
+
+puts 'New beginning created: ' << beginning5.title
+
+beginning6 = user.beginnings.create! :title => 'If', :original_author => ' Rudyard Kipling', :content => "If you can keep your head when all about you 
+Are losing theirs and blaming it on you, 
+If you can trust yourself when all men doubt you, 
+But make allowance for their doubting too; 
+If you can wait and not be tired by waiting, 
+Or being lied about, don't deal in lies, 
+Or being hated, don't give way to hating, 
+And yet don't look too good, nor talk too wise:
+
+If you can dream - and not make dreams your master; 
+If you can think - and not make thoughts your ..."
+
+puts 'New beginning created: ' << beginning6.title
+
+beginning7 = user.beginnings.create! :title => 'The Dead', :original_author => 'James Joyce', :content => "LILY, the caretaker's daughter, was literally run off her feet. Hardly had she brought one gentleman into the little pantry behind the office on the ground floor and helped him off with his overcoat than the wheezy hall-door bell clanged again and she had to scamper along the bare hallway to let in another guest. It was well for her she had not to attend to the ladies also. But Miss Kate and Miss Julia had thought of that and had converted the bathroom upstairs into a ladies' dressing-room. Miss Kate and Miss Julia were there, gossiping and laughing and fussing, walking after each other to the head of the stairs, peering down over the banisters and calling down to Lily to ask her who had come.
+
+It was always a great affair, the Misses Morkan's annual dance. Everybody who knew them came to it, members of the family, old friends of the family, the members of Julia's choir, any of Kate's pupils that were grown up enough, and even some of Mary Jane's pupils too. Never once had it fallen flat. For years and years it had ......" 
+
+puts 'New beginning created: ' << beginning7.title
+
+beginning8 = user.beginnings.create! :title => 'Wind', :original_author => 'Ted Hughes', :content => "This house has been far out at sea all night, 
+The woods crashing through darkness, the booming hills, 
+Winds stampeding the fields under the window 
+Floundering black astride and blinding wet
+
+Till day rose; then under an orange sky 
+The hills had new places, and wind wielded 
+Blade-light, luminous black and emerald, 
+Flexing like the lens of a mad...."
+
+puts 'New beginning created: ' << beginning8.title
+
 ending = user.endings.create! :title => 'My ending for a Dream Within A Dream', :beginning_id => Beginning.first, :content => 'a day,
 In a vision, or in none,
 Is it therefore the less gone?
@@ -111,26 +204,8 @@ One cannot begin it too soon.'
 
 puts 'New ending created: ' << ending2.title
 
-ending3 = user.endings.create! :title => 'My ending for Still I Rise', :beginning_id => Beginning.first, :content => " thighs?
 
-Out of the huts of history's shame
-I rise
-Up from a past that's rooted in pain
-I rise
-I'm a black ocean, leaping and wide,
-Welling and swelling I bear in the tide.
-Leaving behind nights of terror and fear
-I rise
-Into a daybreak that's wondrously clear
-I rise
-Bringing the gifts that my ancestors gave,
-I am the dream and the hope of the slave.
-I rise
-I rise
-I rise."
-puts 'New ending created: ' << ending3.title
-
-ending4 = user.endings.create! :title => 'Another ending for Still I Rise', :beginning_id => Beginning.first, :content => " holy temple
+ending4 = user.endings.create! :title => 'Another ending for Still I Rise', :beginning_id => '2', :content => " holy temple
 and comes into our sight
 to liberate us into life.
 
@@ -152,6 +227,11 @@ Yet it is only love
 which sets us free."
 
 puts 'New ending created: ' << ending4.title
+
+ending5 = user4.endings.create! :title => 'Dead End', :beginning_id => "7".to_i , :content => "always been this way. Little did they know their whole life had been a dream, the whole existence and world mere electrical currents pulsing in through the synapses of Peter Langford's comatose brain and today is the day they switch his life support machine off and Lily's world comes tumbling down."
+
+puts 'New ending created: ' << ending5.title
+
 
 comment = Beginning.first.comments.create! :content => "Budding laureate!"
 

@@ -1,8 +1,21 @@
+<div class="row">
+<div class="span4">
 <h1><%= @user.name %>'s Profile</h1>
 <p>Name: <%= @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
 <p>Beginnings: <%= @user.beginnings.count %>
 <p>Endings: <%= @user.endings.count %>
+</div>
+<div class-"span8">
+<% for activity in @activities %>
+  <%= activity.text %><br/>
+<% end %>
+</div>
+</div>
+
+
+
+
 
 <p>
   <h2> Beginnings </h2>

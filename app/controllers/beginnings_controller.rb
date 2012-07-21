@@ -36,6 +36,7 @@ class BeginningsController < ApplicationController
   # GET /beginnings/1/edit
   def edit
     @beginning = Beginning.find(params[:id])
+    @beginning.activity_owner = current_user
   end
 
   # POST /beginnings
@@ -43,7 +44,7 @@ class BeginningsController < ApplicationController
   def create
     @user = current_user
     @beginning = @user.beginnings.new(params[:beginning])
-
+    @beginning.activity_owner = current_user
     respond_to do |format|
       if @beginning.save
         format.html { redirect_to @beginning, notice: 'Beginning was successfully created.' }
@@ -59,6 +60,7 @@ class BeginningsController < ApplicationController
   # PUT /beginnings/1.json
   def update
     @beginning = Beginning.find(params[:id])
+    @beginning.activity_owner = current_user
 
     respond_to do |format|
       if @beginning.update_attributes(params[:beginning])
@@ -75,6 +77,7 @@ class BeginningsController < ApplicationController
   # DELETE /beginnings/1.json
   def destroy
     @beginning = Beginning.find(params[:id])
+    @beginning.activity_owner = current_user
     @beginning.destroy
 
     respond_to do |format|
