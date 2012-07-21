@@ -2,7 +2,6 @@ require 'rbconfig'
 HOST_OS = RbConfig::CONFIG['host_os']
 source 'https://rubygems.org'
 gem 'rails', '3.2.6'
-gem 'sqlite3'
 gem 'rails_admin'
 gem 'ancestry'
 gem 'thumbs_up'
