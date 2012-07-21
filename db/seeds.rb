@@ -205,7 +205,7 @@ One cannot begin it too soon.'
 puts 'New ending created: ' << ending2.title
 
 
-ending4 = user.endings.create! :title => 'Another ending for Still I Rise', :beginning_id => '2', :content => " holy temple
+ending4 = user.endings.create! :title => 'Another ending for Still I Rise', :beginning_id => "2".to_i, :content => " holy temple
 and comes into our sight
 to liberate us into life.
 
