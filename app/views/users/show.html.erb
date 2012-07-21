@@ -21,11 +21,9 @@
     <td><%= beginning.title %></td>
     <td><%= beginning.original_author %></td>
     <td><%= time_ago_in_words(beginning.created_at) %> ago</td>
-    <div class="btn-group">
-      <td><button class="btn"><%= link_to 'Show', beginning %></button></td>
-      <td><button class="btn"><%= link_to 'Edit', edit_beginning_path(beginning) %></button></td>
-      <td><button class="btn"><%= link_to 'Destroy', beginning, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
-    </div>
+      <td><%= link_to 'Show', beginning, :class => 'btn btn-primary' %></td>
+      <td><%= link_to 'Edit', edit_beginning_path(beginning), :class => 'btn btn-primary' %></td>
+      <td><%= link_to 'Destroy', beginning, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary' %></td>
   </tr>
 <% end %>
 </table>
@@ -47,9 +45,9 @@
     <td><%= ending.beginning.title %></td>
     <td><%= ending.title %></td>
     <td><%= time_ago_in_words(ending.created_at) %> ago</td>
-    <td><button class="btn"><%= link_to 'Show', ending %></button></td>
-    <td><button class="btn"><%= link_to 'Edit', edit_ending_path(ending) %></button></td>
-    <td><button class="btn"><%= link_to 'Destroy', ending, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+    <td><%= link_to 'Show', ending, :class => 'btn btn-primary' %></td>
+    <td><%= link_to 'Edit', edit_ending_path(ending), :class => 'btn btn-primary' %></td>
+    <td><%= link_to 'Destroy', ending, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary' %></td>
   </tr>
 <% end %>
 </table>
