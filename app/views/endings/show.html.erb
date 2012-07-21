@@ -1,3 +1,5 @@
+<section class="ending">
+<div class="row" id="ending">
 <p>
   <b>For Beginning:</b>
   <%= @ending.beginning.title %>
@@ -15,6 +17,24 @@
 </p>
 </div>
 <p>
+  <b>Ending Title:</b>
+  <%= @ending.title %>
+</p>
+<p> 
+  <b>Ending Created by lucid user:</b>
+  <%= @ending.user.name %> on  <%= @ending.created_at %>
+</p>
+<%= link_to 'Edit', edit_ending_path(@ending) %> |
+<%= link_to 'Back', endings_path %>
+</div>
+</section>
+
+<br />
+
+<section class="praise">
+<h2>Praise the lord system</h2>
+<div class="row" id="praise">
+<p>
   <b>Ending has been praised <%= pluralize(@votes, ' time') %>.</b>
 </p>
 <p>
@@ -25,19 +45,14 @@ You have praised this ending.
 <%= button_to('Praise this ending!', vote_up_ending_path(@ending)) %>
 </p>
 <% end %>
-<p>
-  <b>Ending Title:</b>
-  <%= @ending.title %>
-</p>
-<p> 
-  <b>Ending Created by lucid user:</b>
-  <%= @ending.user.name %> on  <%= @ending.created_at %>
-</p>
-<%= link_to 'Edit', edit_ending_path(@ending) %> |
-<%= link_to 'Back', endings_path %>
+</div>
+</section>
 
 
-<div id="comments">
+<section class="comments">
+<h2>Commenting system</h2>
+<div class="row" id="comments">
   <%= nested_comments @ending.comments.includes(:user).arrange(:order => "created_at asc") %>
   <%= render "comments/form" %>
 </div>
+</section>

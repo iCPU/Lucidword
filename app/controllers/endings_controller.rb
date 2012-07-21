@@ -2,7 +2,9 @@ class EndingsController < ApplicationController
   def vote_up
     begin
       current_user.vote_for(@ending = Ending.find(params[:id]))
-      render :nothing => true, :status => 200
+      respond_to do |format|
+        format.html { redirect_to @ending, notice: 'You have praised this ending' }
+      end
     rescue ActiveRecord::RecordInvalid
       render :nothing => true, :status => 404
     end
@@ -11,7 +13,11 @@ class EndingsController < ApplicationController
   def vote_down
     begin
       current_user.unvote_for(@ending = Ending.find(params[:id]))
-      render :nothing => true, :status => 200
+      respond_to do |format|
+        format.html { redirect_to @ending, notice: 'You have removed your praise for this ending' }
+       end
+ 
+    
     rescue ActiveRecord::RecordInvalid
       render :nothing => true, :status => 404
     end
