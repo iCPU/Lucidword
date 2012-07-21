@@ -1,4 +1,24 @@
 class EndingsController < ApplicationController
+  def vote_up
+    begin
+      current_user.vote_for(@ending = Ending.find(params[:id]))
+      render :nothing => true, :status => 200
+    rescue ActiveRecord::RecordInvalid
+      render :nothing => true, :status => 404
+    end
+  end
+
+  def vote_down
+    begin
+      current_user.unvote_for(@ending = Ending.find(params[:id]))
+      render :nothing => true, :status => 200
+    rescue ActiveRecord::RecordInvalid
+      render :nothing => true, :status => 404
+    end
+  end
+
+
+
   # GET /endings
   # GET /endings.json
   def index
@@ -14,6 +34,7 @@ class EndingsController < ApplicationController
   # GET /endings/1.json
   def show
     @ending = Ending.find(params[:id])
+    @votes = @ending.votes_for
     @comment = Comment.new(:ending_id => params[:id], :user_id => current_user)
 
     respond_to do |format|

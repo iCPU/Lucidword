@@ -2,6 +2,8 @@ class Ending < ActiveRecord::Base
 
   attr_accessible :beginning_id, :content, :title
 
+  acts_as_voteable
+
   belongs_to :user
   belongs_to :beginning
   has_many :comments

@@ -15,6 +15,17 @@
 </p>
 </div>
 <p>
+  <b>Ending has been praised <%= pluralize(@votes, ' time') %>.</b>
+</p>
+<p>
+<% if @ending.voted_by?(current_user) %>
+You have praised this ending.
+<%= button_to('Remove praise', vote_down_ending_path(@ending)) %>
+<% else %>
+<%= button_to('Praise this ending!', vote_up_ending_path(@ending)) %>
+</p>
+<% end %>
+<p>
   <b>Ending Title:</b>
   <%= @ending.title %>
 </p>

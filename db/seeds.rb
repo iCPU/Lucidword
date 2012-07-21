@@ -23,6 +23,11 @@ user4 = User.create! :name => 'Robin', :email => 'r@r.r', :password => 'foobar',
 puts 'New user created: ' << user4.name
 user4.add_role :admin
 
+user5 = User.create! :name => 'Brian', :email => 'b@b.b', :password => 'foobar', :password_confirmation => 'foobar'
+puts 'New user created: ' << user5.name
+user5.add_role :admin
+
+
 puts 'SETTING UP SEED TEXTs'
 
 beginning = user.beginnings.create! :title => 'A Dream Within A Dream', :original_author => 'Edgar Allan Poe', :content => 'Take this kiss upon the brow!
