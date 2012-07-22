@@ -10,8 +10,12 @@ Lucidword::Application.routes.draw do
   devise_for :users
   resources :users, :only => [:show, :index]
 
-  resources :beginnings
-
+  resources :beginnings do
+    member do
+      get 'ereader'
+    end
+  end
+ 
   resources :endings do
     member do 
       post :vote_up

@@ -16,6 +16,7 @@
     <td><%= beginning.style_type %></td>
     <td><%= time_ago_in_words(beginning.created_at) %> ago</td>
       <td><%= link_to 'Show', beginning, :class => 'btn btn-primary' %></td>
+      <td><%= link_to 'EReader', ereader_beginning_path(beginning), :class => 'btn btn-primary' %></td>
       <td><%= link_to 'Edit', edit_beginning_path(beginning), :class => 'btn btn-primary' %></td>
       <td><%= link_to 'Destroy', beginning, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary' %></td>
     </div>

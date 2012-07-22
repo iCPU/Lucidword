@@ -1,5 +1,5 @@
 class Beginning < ActiveRecord::Base
-  attr_accessible :content, :original_author, :title, :style_type
+  attr_accessible :content, :original_author, :title, :style_type, :embed_code
 
   belongs_to :user
   has_many :endings
