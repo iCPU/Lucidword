@@ -1,6 +1,9 @@
 
 <% if @beginning.embed_code %>
-<%= @beginning.embed_code.html_safe %>
+
+<iframe frameborder="0" height="600" scrolling="no" src=<%= @beginning.embed_code.html_safe %>
+ width="460"></iframe><p>A book by <a href="http://booki.sh">Booki.sh</a></p>
+
 <div class="form-inputs">
 <%= simple_form_for(@ending) do |f| %>
   <%= f.error_notification %>
