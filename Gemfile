@@ -5,7 +5,6 @@ gem 'rails', '3.2.6'
 gem 'rails_admin'
 gem 'ancestry'
 gem 'thumbs_up'
-gem 'public_activity'
 group :production do
   gem 'pg'
 end
