@@ -4,6 +4,7 @@
   <div class="form-inputs">
     <%= f.input :title, :input_html => { :class => "span4" } %>
     <%= f.input :original_author, :input_html => { :class => "span4" } %>
+    <%= f.input :style_type, :collection => [ "Poetry", "Short Story", "Classic Novel"] %>
     <%= f.input :content, :as => :text, :input_html => { :class => "span6" }  %>
 
 

@@ -4,6 +4,7 @@
   <tr>
     <th>Title</th>
     <th>Original Author</th>
+    <th>Style</th>
     <th>Created</th>
     <th>Controls</th>
   </tr>
@@ -12,6 +13,7 @@
   <tr>
     <td><%= beginning.title %></td>
     <td><%= beginning.original_author %></td>
+    <td><%= beginning.style_type %></td>
     <td><%= time_ago_in_words(beginning.created_at) %> ago</td>
       <td><%= link_to 'Show', beginning, :class => 'btn btn-primary' %></td>
       <td><%= link_to 'Edit', edit_beginning_path(beginning), :class => 'btn btn-primary' %></td>

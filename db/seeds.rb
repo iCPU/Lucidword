@@ -30,7 +30,7 @@ user5.add_role :admin
 
 puts 'SETTING UP SEED TEXTs'
 
-beginning = user.beginnings.create! :title => 'A Dream Within A Dream', :original_author => 'Edgar Allan Poe', :content => 'Take this kiss upon the brow!
+beginning = user.beginnings.create! :title => 'A Dream Within A Dream', :style_type => 'Poetry', :original_author => 'Edgar Allan Poe', :content => 'Take this kiss upon the brow!
 And, in parting from you now,
 Thus much let me avow--
 You are not wrong, who deem
@@ -40,7 +40,7 @@ In a night, or in'
 
 puts 'New beginning created: ' << beginning.title
 
-beginning2 = user.beginnings.create! :title => 'Still I Rise', :original_author => 'Maya Angelou', :content => "You may write me down in history
+beginning2 = user.beginnings.create! :title => 'Still I Rise', :style_type => 'Poetry', :original_author => 'Maya Angelou', :content => "You may write me down in history
 With your bitter, twisted lies,
 You may trod me in the very dirt
 But still, like dust, I'll rise.
@@ -77,7 +77,7 @@ At the meeting of my"
 
 puts 'New beginning created: ' << beginning2.title
 
-beginning3 = user3.beginnings.create! :title => 'Daddy', :original_author => 'Sylvia Plath', :content => 'You do not do, you do not do
+beginning3 = user3.beginnings.create! :title => 'Daddy', :style_type => 'Poetry', :original_author => 'Sylvia Plath', :content => 'You do not do, you do not do
 Any more, black shoe
 In which I have lived like a foot
 For thirty years, poor and white,
@@ -85,7 +85,7 @@ Barely daring to breathe or Achoo.'
 
 puts 'New beginning created: ' << beginning3.title
 
-beginning4 = user2.beginnings.create! :title => "Oh, The Places You'll Go", :original_author => 'Dr. Seuss', :content => "Congratulations! 
+beginning4 = user2.beginnings.create! :title => "Oh, The Places You'll Go", :style_type => 'Poetry', :original_author => 'Dr. Seuss', :content => "Congratulations! 
 Today is your day. 
 You're off to Great Places! 
 You're off and away!
@@ -125,7 +125,7 @@ THE PLACES YOU'LL GO!"
 
 puts 'New beginning created: ' << beginning4.title
 
-beginning5 = user.beginnings.create! :title => 'Ode to autumn', :original_author => 'John Keats', :content => "Season of mists and mellow fruitfulness, 
+beginning5 = user.beginnings.create! :title => 'Ode to autumn', :style_type => 'Poetry', :original_author => 'John Keats', :content => "Season of mists and mellow fruitfulness, 
 Close bosom-friend of the maturing sun; 
 Conspiring with him how to load and bless 
 With fruit the vines that round the thatch-eaves run; 
@@ -138,7 +138,7 @@ Until they think warm days will never ...."
 
 puts 'New beginning created: ' << beginning5.title
 
-beginning6 = user.beginnings.create! :title => 'If', :original_author => ' Rudyard Kipling', :content => "If you can keep your head when all about you 
+beginning6 = user.beginnings.create! :title => 'If', :style_type => 'Poetry', :original_author => ' Rudyard Kipling', :content => "If you can keep your head when all about you 
 Are losing theirs and blaming it on you, 
 If you can trust yourself when all men doubt you, 
 But make allowance for their doubting too; 
@@ -152,13 +152,13 @@ If you can think - and not make thoughts your ..."
 
 puts 'New beginning created: ' << beginning6.title
 
-beginning7 = user.beginnings.create! :title => 'The Dead', :original_author => 'James Joyce', :content => "LILY, the caretaker's daughter, was literally run off her feet. Hardly had she brought one gentleman into the little pantry behind the office on the ground floor and helped him off with his overcoat than the wheezy hall-door bell clanged again and she had to scamper along the bare hallway to let in another guest. It was well for her she had not to attend to the ladies also. But Miss Kate and Miss Julia had thought of that and had converted the bathroom upstairs into a ladies' dressing-room. Miss Kate and Miss Julia were there, gossiping and laughing and fussing, walking after each other to the head of the stairs, peering down over the banisters and calling down to Lily to ask her who had come.
+beginning7 = user.beginnings.create! :title => 'The Dead', :style_type => 'Short Story', :original_author => 'James Joyce', :content => "LILY, the caretaker's daughter, was literally run off her feet. Hardly had she brought one gentleman into the little pantry behind the office on the ground floor and helped him off with his overcoat than the wheezy hall-door bell clanged again and she had to scamper along the bare hallway to let in another guest. It was well for her she had not to attend to the ladies also. But Miss Kate and Miss Julia had thought of that and had converted the bathroom upstairs into a ladies' dressing-room. Miss Kate and Miss Julia were there, gossiping and laughing and fussing, walking after each other to the head of the stairs, peering down over the banisters and calling down to Lily to ask her who had come.
 
 It was always a great affair, the Misses Morkan's annual dance. Everybody who knew them came to it, members of the family, old friends of the family, the members of Julia's choir, any of Kate's pupils that were grown up enough, and even some of Mary Jane's pupils too. Never once had it fallen flat. For years and years it had ......" 
 
 puts 'New beginning created: ' << beginning7.title
 
-beginning8 = user.beginnings.create! :title => 'Wind', :original_author => 'Ted Hughes', :content => "This house has been far out at sea all night, 
+beginning8 = user.beginnings.create! :title => 'Wind', :style_type => 'Poetry', :original_author => 'Ted Hughes', :content => "This house has been far out at sea all night, 
 The woods crashing through darkness, the booming hills, 
 Winds stampeding the fields under the window 
 Floundering black astride and blinding wet
