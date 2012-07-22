@@ -1,8 +1,6 @@
 class Beginning < ActiveRecord::Base
   attr_accessible :content, :original_author, :title
 
-  tracked
-
   belongs_to :user
   has_many :endings
 

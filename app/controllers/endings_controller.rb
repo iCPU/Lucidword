@@ -63,7 +63,6 @@ class EndingsController < ApplicationController
   # GET /endings/1/edit
   def edit
     @ending = Ending.find(params[:id])
-    @ending.activity_owner = current_user
 
   end
 
@@ -72,7 +71,6 @@ class EndingsController < ApplicationController
   def create
     @user = current_user
     @ending = @user.endings.new(params[:ending])
-    @ending.activity_owner = current_user
 
     respond_to do |format|
       if @ending.save
@@ -89,7 +87,6 @@ class EndingsController < ApplicationController
   # PUT /endings/1.json
   def update
     @ending = Ending.find(params[:id])
-    @ending.activity_owner = current_user
 
     respond_to do |format|
       if @ending.update_attributes(params[:ending])
@@ -106,7 +103,6 @@ class EndingsController < ApplicationController
   # DELETE /endings/1.json
   def destroy
     @ending = Ending.find(params[:id])
-    @ending.activity_owner = current_user
     @ending.destroy
 
     respond_to do |format|
