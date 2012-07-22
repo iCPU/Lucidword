@@ -233,22 +233,14 @@ ending5 = user4.endings.create! :title => 'Dead End', :beginning_id => "7".to_i 
 puts 'New ending created: ' << ending5.title
 
 
-comment = Beginning.first.comments.create! :content => "Budding laureate!"
+comment = Comment.create! :ending_id => '1', :user_id => '4', :content => "I like the juxtaposition you imposed against the current social context and Gregorian backdrop of the piece."
 
 puts 'New comment created: ' << comment.content
 
-comment2 = Beginning.last.comments.create! :content => "Great start!"
+comment2 = Comment.create! :parent_id => '1', :ending_id => '1', :user_id => '1', :content => "yes! this is exactly the aspect I was attending toward."
 
 puts 'New comment created: ' << comment2.content
 
-comment3 = Ending.first.comments.create! :content => "You finished it!"
+comment3 = Comment.create! :parent_id => '', :ending_id => '4', :user_id => '1', :content => "I feel the tumbling down tumbling down... There was a judge who like puts in a court. And the judge have like in what able jail what it could be a spanking. Or a whack. Or a smack. Or a swat. Or a hit."
 
 puts 'New comment created: ' << comment3.content
-
-comment4 = User.first.comments.create! :content => "Fan of your work"
-
-puts 'New comment created: ' << comment4.content
-
-
-
-
