@@ -4,6 +4,5 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, :alert => exception.message
   end
 
-  before_filter :authenticate_user!
 
 end

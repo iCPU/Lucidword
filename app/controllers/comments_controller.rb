@@ -1,6 +1,10 @@
 class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
+
+  before_filter :authenticate_user!
+
+
   def index
     @comments = Comment.scoped
     @comment = Comment.new

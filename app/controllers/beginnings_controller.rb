@@ -1,6 +1,9 @@
 class BeginningsController < ApplicationController
   include ActionView::Helpers::TextHelper
 
+  before_filter :authenticate_user!
+
+
   def ereader
     @ending = Ending.new
     @beginning = Beginning.find(params[:id])
