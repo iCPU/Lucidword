@@ -28,22 +28,19 @@
 </div>
 <br />
 
-<h2>Praise the lord system</h2>
-<p>
-  <b>Ending has been praised <%= pluralize(@votes, ' time') %>.</b>
+<h2>Praise system</h2>
+  <b>Ending has been praised <strong id="praised" class="stat">
+ <%= pluralize(@ending.votes_for, ' time') %></strong>.</b>
 </p>
+<div id="voteform">
 <p>
 <% if @ending.voted_by?(current_user) %>
-You have praised this ending.
-<div class="form-actions">
-<%= link_to 'Remove praise', vote_down_ending_path(@ending), :method => :post, :class => 'btn btn-primary' %>
-</div>
+<%= render 'vote_down' %>
 <% else %>
-<div class="form-actions">
-<%= link_to 'Praise this ending!', vote_up_ending_path(@ending), :method => :post, :class => 'btn btn-primary' %>
+<%= render 'vote_up' %>
+<% end %>
 </p>
 </div>
-<% end %>
 
 
 <h2>Commenting system</h2>

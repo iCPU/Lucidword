@@ -1,14 +1,17 @@
 <% if signed_in? %>
 <div class="row">
+<% if rand(1..2) == 1 %>
 <div class="span6">
 <div class="hero-unit">
 <h1>Where I end and you begin...</h1>
 </div>
-</div><div class="span6">
+</div>
+<% else %><div class="span6">
 <div class="hero-unit">
 <h1>In the beginning was the word...</h2>
 </div>
 </div>
+<% end %>
 </div>
 
 <% else %>

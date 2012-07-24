@@ -6,6 +6,7 @@ class EndingsController < ApplicationController
 
       respond_to do |format|
         format.html { redirect_to @ending, notice: 'You have praised this ending' }
+        format.js
       end
     rescue ActiveRecord::RecordInvalid
       render :nothing => true, :status => 404
@@ -19,6 +20,7 @@ class EndingsController < ApplicationController
 
       respond_to do |format|
         format.html { redirect_to @ending, notice: 'You have removed your praise for this ending' }
+         format.js
        end
  
     
