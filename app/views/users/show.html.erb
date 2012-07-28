@@ -5,7 +5,7 @@
 <p>Email: <%= @user.email if @user.email %></p>
 <p>Beginnings authored: <%= @user.beginnings.count %></p>
 <p>Endings authored: <%= @user.endings.count %></p>
-<p>Beginning bookmarked: <%= @user.following_endings_count %></p>
+<p>Beginnings bookmarked: <%= @user.following_beginnings_count %></p>
 <p>Endings bookmarked: <%= @user.following_endings_count %></p>
 
 </div>
@@ -42,6 +42,28 @@
 </table>
 <br />
 
+<p>
+  <h2><%= @user.name %>'s Bookmarked Beginnings </h2>
+</p>
+
+<table class="table table-striped">
+  <tr>
+    <th>Beginning Title</th>
+    <th>Beginning Author</th>
+    <th>Controls</th>
+
+  </tr>
+
+<% @beginningbookmarks.each do |bookmark| %>
+  <tr>
+    <td><%= bookmark.title %></td>
+    <td><%= bookmark.original_author %></td>
+
+      <td><%= link_to 'Unbookmark', unbookmark_beginning_path(bookmark), method: :post, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary' %></td>
+  </tr>
+<% end %>
+</table>
+<br />
 
 <p>
   <h2><%= @user.name %>'s Endings </h2>

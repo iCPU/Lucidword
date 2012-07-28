@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @praise = @user.plusminus
     @endingbookmarks = @user.following_by_type('Ending')
-
+    @beginningbookmarks = @user.following_by_type('Beginning')
   end
 
 
