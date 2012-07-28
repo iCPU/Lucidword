@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
   acts_as_voter
   acts_as_voteable
+  acts_as_follower
 
   has_many :beginnings  
   has_many :endings

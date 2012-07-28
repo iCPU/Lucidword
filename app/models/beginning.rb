@@ -1,6 +1,8 @@
 class Beginning < ActiveRecord::Base
   attr_accessible :content, :original_author, :title, :style_type, :embed_code
 
+  acts_as_followable
+
   belongs_to :user
   has_many :endings
 

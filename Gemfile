@@ -12,6 +12,7 @@ gem 'will_paginate', "3.0.pre4"
 gem 'jquery-rails'
 gem 'ancestry'
 gem 'thumbs_up'
+gem "acts_as_follower"
 
 group :production do
   gem 'pg'
