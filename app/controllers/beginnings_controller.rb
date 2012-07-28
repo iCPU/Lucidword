@@ -2,7 +2,33 @@ class BeginningsController < ApplicationController
   include ActionView::Helpers::TextHelper
 
   before_filter :authenticate_user!
+ 
+  def  bookmark
+    begin
+      current_user.follow(@beginning = Beginning.find(params[:id]))
 
+      respond_to do |format|
+        format.html { redirect_to current_user, notice: 'You have bookmarked this beginning' }
+        format.js
+      end
+    rescue ActiveRecord::RecordInvalid
+      render :nothing => true, :status => 404
+    end
+  end
+
+  def unbookmark
+    begin
+      current_user.stop_following(@beginning = Beginning.find(params[:id]))
+
+      respond_to do |format|
+        format.html { redirect_to current_user, notice: 'You have removed your bookmark' }
+         format.js
+       end
+
+    rescue ActiveRecord::RecordInvalid
+      render :nothing => true, :status => 404
+    end
+ end
 
   def ereader
     @ending = Ending.new

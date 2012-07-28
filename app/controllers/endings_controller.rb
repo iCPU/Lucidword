@@ -7,7 +7,7 @@ class EndingsController < ApplicationController
       current_user.follow(@ending = Ending.find(params[:id]))
 
       respond_to do |format|
-        format.html { redirect_to @ending, notice: 'You have bookmarked this ending' }
+        format.html { redirect_to current_user, notice: 'You have bookmarked this ending' }
         format.js
       end
     rescue ActiveRecord::RecordInvalid
@@ -20,7 +20,7 @@ class EndingsController < ApplicationController
       current_user.stop_following(@ending = Ending.find(params[:id]))
 
       respond_to do |format|
-        format.html { redirect_to @ending, notice: 'You have removed your praise for this ending' }
+        format.html { redirect_to current_user, notice: 'You have removed your bookmark' }
          format.js
        end
 
