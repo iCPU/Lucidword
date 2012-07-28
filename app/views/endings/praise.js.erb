@@ -1,0 +1,2 @@
+$("#voteform").html("<%= escape_javascript(render('endings/unpraise')) %>")
+$("#praised").html('<%= pluralize(@ending.votes_for, ' time') %>')

@@ -35,9 +35,22 @@
 <div id="voteform">
 <p>
 <% if @ending.voted_by?(current_user) %>
-<%= render 'vote_down' %>
+<%= render 'unpraise' %>
 <% else %>
-<%= render 'vote_up' %>
+<%= render 'praise' %>
+<% end %>
+</p>
+</div>
+<h2>Bookmark system</h2>
+  <b>Ending has been bookmarked <strong id="bookmark" class="bm-stat">
+ <%= pluralize(@ending.followers_count, ' time') %></strong>.</b>
+</p>
+<div id="bookmarkform">
+<p>
+<% if @ending.followed_by?(current_user) %>
+<%= render 'unbookmark' %>
+<% else %>
+<%= render 'bookmark' %>
 <% end %>
 </p>
 </div>

@@ -1,0 +1,3 @@
+$("#bookmarkform").html("<%= escape_javascript(render('endings/unbookmark')) %>")
+$("#bookmark").html('<%= pluralize(@ending.followers_count, ' time') %>')
+

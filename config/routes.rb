@@ -18,8 +18,10 @@ Lucidword::Application.routes.draw do
  
   resources :endings do
     member do 
-      post :vote_up
-      post :vote_down
+      post :praise
+      post :unpraise
+      post :bookmark
+      post :unbookmark
     end
   end
 

@@ -2,8 +2,34 @@ class EndingsController < ApplicationController
 
   before_filter :authenticate_user!
 
+  def  bookmark
+    begin
+      current_user.follow(@ending = Ending.find(params[:id]))
 
-  def vote_up
+      respond_to do |format|
+        format.html { redirect_to @ending, notice: 'You have bookmarked this ending' }
+        format.js
+      end
+    rescue ActiveRecord::RecordInvalid
+      render :nothing => true, :status => 404
+    end
+  end
+
+  def unbookmark
+    begin
+      current_user.stop_following(@ending = Ending.find(params[:id]))
+
+      respond_to do |format|
+        format.html { redirect_to @ending, notice: 'You have removed your praise for this ending' }
+         format.js
+       end
+
+    rescue ActiveRecord::RecordInvalid
+      render :nothing => true, :status => 404
+    end
+  end
+
+  def praise
     begin
       current_user.vote_exclusively_for(@ending = Ending.find(params[:id]))
       current_user.vote_for(@ending.user)
@@ -17,7 +43,7 @@ class EndingsController < ApplicationController
     end
   end
 
-  def vote_down
+  def unpraise
     begin
       current_user.unvote_for(@ending = Ending.find(params[:id]))
       current_user.vote_against(@ending.user)
