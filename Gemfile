@@ -13,6 +13,7 @@ gem 'jquery-rails'
 gem 'ancestry'
 gem 'thumbs_up'
 gem "acts_as_follower"
+gem 'gravatar_image_tag'
 
 group :production do
   gem 'pg'

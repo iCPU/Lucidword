@@ -38,6 +38,8 @@ class UsersController < ApplicationController
     @praise = @user.plusminus
     @endingbookmarks = @user.following_by_type('Ending')
     @beginningbookmarks = @user.following_by_type('Beginning')
+    @userfollowed = @user.following_by_type('User')
+
   end
 
 

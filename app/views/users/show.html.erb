@@ -8,10 +8,12 @@
 <% else %>
 <%= render 'follow' %>
 <% end %>
-
 </div>
 <% end %>
 <br />
+
+<%= gravatar_image_tag( @user.email, :alt => @user.name, :gravatar => { :size => 80 }) %>
+
 <p>Name: <%= @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
 <p><%= @user.name %> has written <%= pluralize( @user.beginnings.count, 'beginning') %>.</p>
@@ -23,7 +25,6 @@
 <p><%= @user.name %> is following <%= pluralize(@user.following_by_type_count('User'), 'user') %>.</p>
 </div>
 </div>
-<br />
 <!--<h2>User following system</h2>
 <div id="followform">
 <p>
@@ -35,7 +36,29 @@
 </p>
 </div>
 -->
+<p>
+  <h2>Users <%= @user.name %> is following </h2>
+</p>
+<div class="row">
+<div class="span4">
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Controls</th>
+  </tr>
+<% @userfollowed.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= link_to 'Show', user_path(user), :class => 'btn btn-primary' %></td>
+    <td><%= link_to 'Unfollow', unfollow_user_path(user), method: :post, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary' %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+</div>
 <br />
+<div class ="row">
+<div class="span4">
 <p>
   <h2><%= @user.name %>'s Bookmarked Endings </h2>
 </p>
@@ -46,25 +69,24 @@
     <th>Ending Author</th>
     <th>What Beginning?</th>
     <th>Controls</th>
-
   </tr>
-
 <% @endingbookmarks.each do |bookmark| %>
   <tr>
     <td><%= bookmark.title %></td>
     <td><%= bookmark.user.name %></td>
     <td><%= bookmark.beginning.title %></td>
-
-      <td><%= link_to 'Unbookmark', unbookmark_ending_path(bookmark), method: :post, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary' %></td>
+    <td><%= link_to 'Unbookmark', unbookmark_ending_path(bookmark), method: :post, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary' %></td>
   </tr>
 <% end %>
 </table>
-<br />
+</div>
+</div>
 
+<div class ="row">
+<div class ="span4">
 <p>
   <h2><%= @user.name %>'s Bookmarked Beginnings </h2>
 </p>
-
 <table class="table table-striped">
   <tr>
     <th>Beginning Title</th>
@@ -82,8 +104,11 @@
   </tr>
 <% end %>
 </table>
-<br />
+</div>
+</div>
 
+<div class="row">
+<div class="span6">
 <p>
   <h2><%= @user.name %>'s Endings </h2>
 </p>
@@ -106,8 +131,11 @@
   </tr>
 <% end %>
 </table>
-<br />
+</div>
+</div>
 
+<div class="row">
+<div class="span6">
 <p>
   <h2><%= @user.name %>'s Beginnings </h2>
 </p>
@@ -125,12 +153,11 @@
     <td><%= beginning.title %></td>
     <td><%= beginning.original_author %></td>
     <td><%= time_ago_in_words(beginning.created_at) %> ago</td>
-      <td><%= link_to 'Show', beginning, :class => 'btn btn-primary' %></td>
-      <td><%= link_to 'Edit', edit_beginning_path(beginning), :class => 'btn btn-primary' %></td>
-      <td><%= link_to 'Destroy', beginning, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary' %></td>
+    <td><%= link_to 'Show', beginning, :class => 'btn btn-primary' %></td>
+    <td><%= link_to 'Edit', edit_beginning_path(beginning), :class => 'btn btn-primary' %></td>
+    <td><%= link_to 'Destroy', beginning, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary' %></td>
   </tr>
 <% end %>
 </table>
-<br />
-
-
+</div>
+</div>
