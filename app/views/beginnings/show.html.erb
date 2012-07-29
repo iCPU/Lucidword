@@ -43,11 +43,6 @@
   <%= f.input :title, :label => false, :input_html => { :class => "span4" } %>
 </p>
 
-<p>
-  <b>Sharing Options</b>
-  <%= f.input :title, :placeholder => "Private", :collection => [ "Keep it private", "Share via private URL", "Make it public"], :label => "By default your ending is private", :as => :radio_buttons, :checked => "Keep it private" %>
-</p>
-
 
   <div class="form-actions">
     <%= f.button :submit, 'Save Ending', :class => 'btn btn-primary' %>
