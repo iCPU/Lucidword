@@ -5,7 +5,6 @@ class CreateEndings < ActiveRecord::Migration
       t.text :content
       t.integer :user_id
       t.integer :beginning_id
-      t.column :private, :boolean, :default => true, :null => true 
 
       t.timestamps
     end
