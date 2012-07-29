@@ -1,4 +1,12 @@
 <div class ="alert alert-success">
+<div id="bookmarkform">
+<% if @beginning.followed_by?(current_user) %>
+<%= render 'unbookmark' %>
+<% else %>
+<%= render 'bookmark' %>
+<% end %>
+</div>
+<br />
 <p>
   <b>Title:</b>
   <%= @beginning.title %>
@@ -40,7 +48,7 @@
     <%= f.button :submit, :class => 'btn btn-primary' %>
   </div>
 <% end %>
-
+<!--
 <h2>Bookmark system</h2>
   <b>Beginning has been bookmarked <strong id="bookmark" class="bm-stat">
  <%= pluralize(@beginning.followers_count, ' time') %></strong>.</b>
@@ -54,5 +62,5 @@
 <% end %>
 </p>
 </div>
-
+-->
 

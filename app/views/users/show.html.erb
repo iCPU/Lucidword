@@ -1,21 +1,40 @@
 <div class="row">
 <div class="span4">
 <h1><%= @user.name %>'s Profile</h1>
+<% if current_user != @user %>
+<div id="followform">
+<% if @user.followed_by?(current_user) %>
+<%= render 'unfollow' %>
+<% else %>
+<%= render 'follow' %>
+<% end %>
+
+</div>
+<% end %>
+<br />
 <p>Name: <%= @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
-<p>Beginnings authored: <%= @user.beginnings.count %></p>
-<p>Endings authored: <%= @user.endings.count %></p>
-<p>Beginnings bookmarked: <%= @user.following_beginnings_count %></p>
-<p>Endings bookmarked: <%= @user.following_endings_count %></p>
-
+<p><%= @user.name %> has written <%= pluralize( @user.beginnings.count, 'beginning') %>.</p>
+<p><%= @user.name %> has written <%= pluralize( @user.endings.count, 'ending') %>.</p>
+<p><%= @user.name %>'s writing has been praised <%= pluralize(@praise, ' time') %>.</p>
+<p><%= @user.name %> has bookmarked <%= pluralize(@user.following_endings_count, ' ending') %>.</p>
+<p><%= @user.name %> has bookmarked <%= pluralize(@user.following_beginnings_count, ' beginning') %>.</p>
+<p><%= @user.name %> has been followed <strong id="follow" style="font-weight: normal"><%= pluralize(@user.followers_count, ' time') %></strong>.</p>
+<p><%= @user.name %> is following <%= pluralize(@user.following_by_type_count('User'), 'user') %>.</p>
 </div>
 </div>
 <br />
-
-<h2>Praise system</h2>
+<!--<h2>User following system</h2>
+<div id="followform">
 <p>
-  <b><%= @user.name %> has been praised <%= pluralize(@praise, ' time') %>.</b>
+<% if @user.followed_by?(current_user) %>
+<%= render 'unfollow' %>
+<% else %>
+<%= render 'follow' %>
+<% end %>
 </p>
+</div>
+-->
 <br />
 <p>
   <h2><%= @user.name %>'s Bookmarked Endings </h2>

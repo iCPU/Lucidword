@@ -1,0 +1,3 @@
+$("#followform").html("<%= escape_javascript(render('users/unfollow')) %>")
+$("#follow").html('<%= pluralize(@user.followers_count, ' time') %>')
+

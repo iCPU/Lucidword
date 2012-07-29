@@ -8,7 +8,13 @@ Lucidword::Application.routes.draw do
     root :to => 'home#index'
   end
   devise_for :users
-  resources :users, :only => [:show, :index]
+  resources :users, :only => [:show, :index] do
+    member do
+      post :follow
+      post :unfollow
+    end
+  end
+
 
   resources :beginnings do
     member do
