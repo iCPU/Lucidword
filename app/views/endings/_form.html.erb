@@ -25,6 +25,17 @@
     <%= f.button :submit, :class => 'btn btn-primary' %>
   </div>
 
+ <div class="form-actions">
+<div id="publishform">
+<p>
+<% if @ending.private? %>
+<%= render 'publish' %>
+<% else %>
+<%= render 'unpublish' %>
+<% end %>
+</p>
+</div>
+</div>
 
 <% end %>
 

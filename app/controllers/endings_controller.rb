@@ -2,6 +2,35 @@ class EndingsController < ApplicationController
 
   before_filter :authenticate_user!
 
+  def  publish
+    begin
+      @ending = Ending.find(params[:id])
+      @ending.toggle!(:private)
+
+      respond_to do |format|
+        format.html { redirect_to @ending, notice: 'Ending made public' }
+        format.js
+      end
+    rescue ActiveRecord::RecordInvalid
+      render :nothing => true, :status => 404
+    end
+  end
+
+  def unpublish
+    begin
+      @ending = Ending.find(params[:id])
+      @ending.toggle!(:private)
+
+      respond_to do |format|
+        format.html { redirect_to @ending, notice: 'Ending made private' }
+         format.js
+       end
+
+    rescue ActiveRecord::RecordInvalid
+      render :nothing => true, :status => 404
+    end
+  end
+
   def  bookmark
     begin
       current_user.follow(@ending = Ending.find(params[:id]))

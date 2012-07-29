@@ -52,8 +52,18 @@
 </div>
 
 <div class="form-actions">
-<%= link_to 'Edit', edit_ending_path(@ending), :class => 'btn btn-primary' %>
+<%= link_to 'Edit Ending', edit_ending_path(@ending), :class => 'btn btn-primary' %>
 <%= link_to 'Back', endings_path, :class => 'btn btn-primary' %>
+<br />
+<br />
+
+<div id="publishform">
+<% if @ending.private? %>
+<%= render 'publish' %>
+<% else %>
+<%= render 'unpublish' %>
+<% end %>
+</div>
 </div>
 <br />
 

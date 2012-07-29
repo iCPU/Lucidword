@@ -1,6 +1,6 @@
 class Ending < ActiveRecord::Base
 
-  attr_accessible :beginning_id, :content, :title
+  attr_accessible :beginning_id, :content, :title, :private
 
   acts_as_voteable
   acts_as_followable

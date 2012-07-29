@@ -30,6 +30,8 @@ Lucidword::Application.routes.draw do
       post :unpraise
       post :bookmark
       post :unbookmark
+      post :publish
+      post :unpublish
     end
   end
 

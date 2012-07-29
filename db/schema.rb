@@ -43,8 +43,9 @@ ActiveRecord::Schema.define(:version => 20120728202910) do
     t.text     "content"
     t.integer  "user_id"
     t.integer  "beginning_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.boolean  "private",      :default => true
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   add_index "endings", ["user_id", "beginning_id", "created_at"], :name => "index_endings_on_user_id_and_beginning_id_and_created_at"
@@ -61,17 +62,6 @@ ActiveRecord::Schema.define(:version => 20120728202910) do
 
   add_index "follows", ["followable_id", "followable_type"], :name => "fk_followables"
   add_index "follows", ["follower_id", "follower_type"], :name => "fk_follows"
-
-  create_table "memberships", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "set_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "memberships", ["set_id"], :name => "index_memberships_on_set_id"
-  add_index "memberships", ["user_id", "set_id"], :name => "index_memberships_on_user_id_and_set_id", :unique => true
-  add_index "memberships", ["user_id"], :name => "index_memberships_on_user_id"
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
@@ -96,13 +86,6 @@ ActiveRecord::Schema.define(:version => 20120728202910) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
-
-  create_table "setts", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
