@@ -16,6 +16,7 @@ gem "acts_as_follower"
 gem 'gravatar_image_tag'
 gem "redcarpet"
 gem "coderay"
+gem 'sass-rails',   '~> 3.2.4'
 
 
 group :production do
@@ -32,7 +33,6 @@ group :development, :test do
 end
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.4'
   gem 'coffee-rails', '~> 3.2.2'
   gem 'uglifier', '>= 1.0.3'
 end
