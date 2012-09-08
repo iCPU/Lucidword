@@ -30,17 +30,11 @@ class CommentsController < ApplicationController
   # GET /comments/new.json
   def new
     @comment = Comment.new(:parent_id => params[:parent_id], :ending_id => params[:ending_id], :user_id => current_user)
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @comment }
-    end
   end
 
   # GET /comments/1/edit
   def edit
     @comment = Comment.find(params[:id])
-    @comment.activity_owner = current_user
 
   end
 
