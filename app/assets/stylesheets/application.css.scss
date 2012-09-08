@@ -31,12 +31,12 @@
 	margin-bottom: 1em;
 }
 
-.comment-content {
+.comment_content {
   background: white;
   color: #000;
-  font-size: 18px;
+  font-size: 16px;
   text-decoration: none;
-  margin-top: 5px;
+  margin-top: 10px;
   margin-bottom: 5px;
 }
 
@@ -44,6 +44,16 @@
   background: white;
   color: #000;
   text-decoration: none;
+}
+
+.comment .avatar {
+  float: left;
+  color: #FFF;
+  padding: 4px;
+}
+
+.comment .avatar img {
+  display: block;
 }
 
 .comment .created_at {
@@ -60,13 +70,27 @@
   text-decoration: none;
 }
 
-.nested_comments {
-  margin-left: 3em;
-  position: relative;
+.comment .main {
+  margin-left: 83px;
 }
 
+.nested_comments {
+  margin-left: 83px;
+}
 
-.nested_comments .nested_comments .nested_comments {
+.nested_comments .nested_comments .nested_comments .nested_comments {
   margin-left: 0;
+}
+
+.comment .headline {
+  padding: 5px 14px;
+  font-size: 12px;
+  background-color: #D9EDF7;
+  border: solid 1px #BBB;
+  border-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
 }
 

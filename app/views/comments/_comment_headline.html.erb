@@ -10,8 +10,6 @@
     <% end %>
   </span>
   <% unless comment.created_at.nil? %>
-   commented <%= link_to ending_path(comment.ending) do %>
-        <%= time_ago_in_words comment.created_at %> ago
-    <% end %>
+   commented <%= time_ago_in_words comment.created_at %> ago
   <% end %>
 </div>
