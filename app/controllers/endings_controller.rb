@@ -106,7 +106,7 @@ class EndingsController < ApplicationController
   def show
     @ending = Ending.find(params[:id])
     @votes = @ending.votes_for
-    @comment = Comment.new(:ending_id => params[:id], :user_id => current_user)
+    @comment = Comment.new(:ending_id => params[:id], :user => current_user)
 
     respond_to do |format|
       format.html # show.html.erb

@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
   # GET /comments/new
   # GET /comments/new.json
   def new
-    @comment = Comment.new(:parent_id => params[:parent_id], :ending_id => params[:ending_id], :user_id => current_user)
+    @comment = Comment.new(:parent_id => params[:parent_id], :ending_id => params[:ending_id], :user => current_user)
   end
 
   # GET /comments/1/edit

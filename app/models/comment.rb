@@ -1,5 +1,5 @@
 class Comment < ActiveRecord::Base
-  attr_accessible :content, :ending_id, :parent_id, :user_id, :user_ip, :user_agent, :referrer
+  attr_accessible :content, :ending_id, :parent_id, :user_id, :user_ip, :user_agent, :referrer, :user
 
   has_ancestry  
 
