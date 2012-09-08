@@ -96,7 +96,8 @@
 </p>
 </div>
 -->
-
+<div id="comments">
 <h2>Commenting system</h2>
   <%= nested_comments @ending.comments.includes(:user).arrange(:order => "created_at asc") %>
   <%= render "comments/form" %>
+</div>

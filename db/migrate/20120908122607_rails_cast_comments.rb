@@ -1,4 +1,4 @@
-class Cleanup < ActiveRecord::Migration
+class RailsCastComments < ActiveRecord::Migration
   def self.up
     end
   def self.down

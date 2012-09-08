@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120908122918) do
+ActiveRecord::Schema.define(:version => 20120908122611) do
 
   create_table "beginnings", :force => true do |t|
     t.string   "original_author"
@@ -30,10 +30,17 @@ ActiveRecord::Schema.define(:version => 20120908122918) do
     t.integer  "user_id"
     t.integer  "ending_id"
     t.text     "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "name"
+    t.string   "email"
+    t.string   "site_url"
+    t.string   "user_ip"
+    t.string   "user_agent"
+    t.string   "referrer"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.string   "ancestry"
     t.integer  "position"
+    t.boolean  "legacy",     :default => false, :null => false
   end
 
   add_index "comments", ["ancestry"], :name => "index_comments_on_ancestry"
@@ -88,15 +95,29 @@ ActiveRecord::Schema.define(:version => 20120908122918) do
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
 
+  create_table "spam_checks", :force => true do |t|
+    t.string   "regexp"
+    t.integer  "weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spam_questions", :force => true do |t|
+    t.string   "question"
+    t.string   "answer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "spam_reports", :force => true do |t|
     t.integer  "comment_id"
     t.string   "comment_ip"
     t.string   "comment_site_url"
     t.string   "comment_name"
-    t.string   "user_ip"
     t.datetime "confirmed_at"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "hit_count"
   end
 
   create_table "users", :force => true do |t|
