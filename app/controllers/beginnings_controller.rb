@@ -30,16 +30,6 @@ class BeginningsController < ApplicationController
     end
  end
 
-  def ereader
-    @ending = Ending.new
-    @beginning = Beginning.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @beginning }
-    end
-  end
- 
   # GET /beginnings
   # GET /beginnings.json
 

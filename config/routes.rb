@@ -18,7 +18,6 @@ Lucidword::Application.routes.draw do
 
   resources :beginnings do
     member do
-      get 'ereader'
       post :bookmark
       post :unbookmark
     end
