@@ -1,7 +1,7 @@
 require 'rbconfig'
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.6'
+gem 'rails', '3.2.8'
 gem 'rails_admin'
 gem "devise", ">= 2.1.2"
 gem "cancan", ">= 1.6.8"
@@ -14,6 +14,9 @@ gem 'ancestry'
 gem 'thumbs_up'
 gem "acts_as_follower"
 gem 'gravatar_image_tag'
+gem "redcarpet"
+gem "coderay"
+
 
 group :production do
   gem 'pg'

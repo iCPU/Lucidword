@@ -6,7 +6,7 @@ class Comment < ActiveRecord::Base
   belongs_to :ending
   belongs_to :user
 
-  validates_presence_of :content
+  validates_presence_of :content, :ending_id
 
   scope :recent, order("created_at DESC")
 
