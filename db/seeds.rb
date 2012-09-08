@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 puts 'SETTING UP DEFAULT USER LOGIN'
 
-user = User.create! :name => 'Chris', :email => 'c@c.c', :password => 'foobar', :password_confirmation => 'foobar'
+user = User.create! :name => 'Chris', :email => 'chris@icpu.co.uk', :password => 'foobar', :password_confirmation => 'foobar'
 puts 'New user created: ' << user.name
 user.add_role :admin
 
@@ -170,7 +170,26 @@ Flexing like the lens of a mad...."
 
 puts 'New beginning created: ' << beginning8.title
 
-ending = user.endings.create! :title => 'My ending for a Dream Within A Dream', :beginning_id => Beginning.first, :content => 'a day,
+beginning9 = user3.beginnings.create! :title => 'Alex no title', :style_type => 'Poetry', :original_author => 'Emily Dickinson', :content => "I cannot live with You -
+It would be Life - 
+And Life is over there - 
+Behind the Shelf"
+
+puts 'New beginning created: ' << beginning9.title
+
+beginning10 = user3.beginnings.create! :title => 'Not really any title', :style_type => 'Poetry', :original_author => 'Charles Baudelaire', :content => "The deafening street howled around me. 
+Tall, thin, in full mourning -- majestic sorrow -- 
+A woman passed, with a stately hand 
+Lifting and swinging her widow's reeds and her hem,
+
+Agile and noble, with the foot of a statue. 
+As for myself, clenched like a madman, I drank 
+From her eyes -- pale sky giving birth to the hurricane -- 
+Sweetness that mesmerizes and pleasure that kills."
+
+puts 'New beginning created: ' << beginning10.title
+
+ending1 = user.endings.create! :title => 'My ending for a Dream Within A Dream', :beginning_id => Beginning.first, :content => 'a day,
 In a vision, or in none,
 Is it therefore the less gone?
 All that we see or seem
@@ -190,7 +209,7 @@ One from the pitiless wave?
 Is all that we see or seem
 But a dream within a dream?'
 
-puts 'New ending created: ' << ending.title
+puts 'New ending created: ' << ending1.title
 
 
 ending2 = user.endings.create! :title => 'Another ending for dream within a dream', :beginning_id => Beginning.first, :content => 'the crooked thing,
@@ -205,7 +224,7 @@ One cannot begin it too soon.'
 puts 'New ending created: ' << ending2.title
 
 
-ending4 = user.endings.create! :title => 'Another ending for Still I Rise', :beginning_id => "2".to_i, :content => " holy temple
+ending3 = user.endings.create! :title => 'Another ending for Still I Rise', :beginning_id => "2".to_i, :content => " holy temple
 and comes into our sight
 to liberate us into life.
 
@@ -226,12 +245,18 @@ and will ever be.
 Yet it is only love
 which sets us free."
 
+puts 'New ending created: ' << ending3.title
+
+ending4 = user4.endings.create! :title => 'Dead End', :beginning_id => "7".to_i , :content => "always been this way. Little did they know their whole life had been a dream, the whole existence and world mere electrical currents pulsing in through the synapses of Peter Langford's comatose brain and today is the day they switch his life support machine off and Lily's world comes tumbling down."
+
 puts 'New ending created: ' << ending4.title
 
-ending5 = user4.endings.create! :title => 'Dead End', :beginning_id => "7".to_i , :content => "always been this way. Little did they know their whole life had been a dream, the whole existence and world mere electrical currents pulsing in through the synapses of Peter Langford's comatose brain and today is the day they switch his life support machine off and Lily's world comes tumbling down."
+ending5 = user.endings.create! :title => 'Another ending for dream within a dream', :beginning_id => "9".to_i, :content =>'And it grows - 
+As all things grow- 
+The shelf as veil - 
+Filters you'
 
 puts 'New ending created: ' << ending5.title
-
 
 comment = Comment.create! :ending_id => '1', :user_id => '4', :content => "I like the juxtaposition you imposed against the current social context and Gregorian backdrop of the piece."
 
