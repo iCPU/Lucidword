@@ -6,7 +6,7 @@ gem 'rails_admin'
 gem "devise", ">= 2.1.2"
 gem "cancan", ">= 1.6.8"
 gem "rolify", ">= 3.1.0"
-gem "bootstrap-sass", ">= 2.0.4.0"
+gem "bootstrap-sass", '~> 2.1.0.0'
 gem "simple_form"
 gem 'will_paginate', "3.0.pre4"
 gem 'jquery-rails'
@@ -16,7 +16,7 @@ gem "acts_as_follower"
 gem 'gravatar_image_tag'
 gem "redcarpet"
 gem "coderay"
-gem 'sass-rails',   '~> 3.2.4'
+gem 'sass-rails', '~> 3.1'
 
 
 group :production do
