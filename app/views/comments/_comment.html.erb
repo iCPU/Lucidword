@@ -1,5 +1,5 @@
 <%= div_for comment do %>
-  <%= gravatar_image_tag( @comment.user.email, :alt => @comment.user.name, :gravatar => { :size => 64 }, :class => 'avatar' ) %>
+  <%= gravatar_image_tag( comment.user.email, :alt => comment.user.name, :gravatar => { :size => 64 }, :class => 'avatar' ) %>
 <div class="main">
     <%= render "comments/comment_headline", :comment => comment %>
     <div class="comment_content">
