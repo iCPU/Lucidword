@@ -99,5 +99,7 @@
 <div id="comments">
 <h2>Commenting system</h2>
   <%= nested_comments @ending.comments.includes(:user).arrange(:order => "created_at asc") %>
+</div>
+<div id="comment-form" >
   <%= render "comments/form" %>
 </div>
