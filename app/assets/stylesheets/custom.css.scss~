@@ -1,0 +1,16 @@
+.navbar-inverse .navbar-inner {
+  background-color: #1B1B1B;
+  background-image: none;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffbfbfb', endColorstr='#ffeeeeee', GradientType=0);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3, h4, h5, h6 {
+margin: 10px 0;
+font-family: inherit;
+font-weight: light;
+line-height: 5;
+color: inherit;
+text-rendering: optimizelegibility;
+}

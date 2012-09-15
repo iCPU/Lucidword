@@ -6,7 +6,6 @@ gem 'rails_admin'
 gem "devise", ">= 2.1.2"
 gem "cancan", ">= 1.6.8"
 gem "rolify", ">= 3.1.0"
-gem "bootstrap-sass", '~> 2.1.0.0'
 gem "simple_form"
 gem 'will_paginate', "3.0.pre4"
 gem 'jquery-rails'

@@ -9,12 +9,15 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require bootstrap
+ *= require bootstrap-responsive
+ *= require custom
  *= require_tree .
 */
 
 .content {
   background-color: #eee;
-  padding: 20px;
+  padding: 40px;
   margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
   -webkit-border-radius: 0 0 6px 6px;
   -moz-border-radius: 0 0 6px 6px;
@@ -93,4 +96,5 @@
   -moz-border-radius-topleft: 5px;
   -moz-border-radius-topright: 5px;
 }
+
 
