@@ -1,7 +1,7 @@
 require 'rbconfig'
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.11'
 gem 'rails_admin'
 gem "devise", ">= 2.1.2"
 gem "cancan", ">= 1.6.8"
